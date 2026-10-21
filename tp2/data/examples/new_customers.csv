@@ -1,0 +1,6 @@
+customerID,tenure,MonthlyCharges,TotalCharges,Contract,InternetService,PaymentMethod
+EX-0001,1,70.70,70.70,Month-to-month,Fiber optic,Electronic check
+EX-0002,60,25.10,1506.00,Two year,No,Bank transfer (automatic)
+EX-0003,12,55.20,662.40,One year,DSL,Mailed check
+EX-0004,0,80.00, ,Month-to-month,Fiber optic,Electronic check
+EX-0005,24,65.00,1560.00,Three year,Satellite,Crypto wallet

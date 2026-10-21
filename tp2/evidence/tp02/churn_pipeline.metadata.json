@@ -1,0 +1,130 @@
+{
+  "created_at": "2026-10-21T17:52:50.133552+00:00",
+  "artifact": {
+    "path": "artifacts/churn_pipeline.joblib",
+    "sha256": "32cbd0a8fb5596d7308998bfeccc369154cd26d6caa574788ea37ce548d71b9c",
+    "format": "joblib (trusted source only)"
+  },
+  "data": {
+    "source_file": "data/raw/telco.csv",
+    "sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+    "rows": 7043
+  },
+  "split": {
+    "seed": 42,
+    "sizes": {
+      "train": 4225,
+      "valid": 1409,
+      "test": 1409
+    },
+    "stratified_on": "Churn",
+    "allocation_file": "data/processed/split_allocations.csv",
+    "allocation_sha256": "bf235075965a5a6260a2d2c4b9e66b0bd39325440d6118395c140fd4e2fafeb6",
+    "test_evaluated": false
+  },
+  "features": {
+    "id_column": "customerID",
+    "target": "Churn",
+    "numeric": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges"
+    ],
+    "categorical": [
+      "Contract",
+      "InternetService",
+      "PaymentMethod"
+    ],
+    "input_order": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges",
+      "Contract",
+      "InternetService",
+      "PaymentMethod"
+    ]
+  },
+  "positive_class": {
+    "label": "Yes",
+    "encoded_as": 1
+  },
+  "threshold": 0.5,
+  "preprocessing": {
+    "parsing": "blank/whitespace -> NaN; numeric via pandas.to_numeric(errors='raise')",
+    "numeric": "SimpleImputer(median) -> StandardScaler",
+    "categorical": "SimpleImputer(constant='__missing__') -> OneHotEncoder(handle_unknown='ignore')",
+    "learned_numeric_medians": {
+      "tenure": 29.0,
+      "MonthlyCharges": 70.55,
+      "TotalCharges": 1373.625
+    }
+  },
+  "selected_model": {
+    "name": "random_forest",
+    "class": "RandomForestClassifier",
+    "params": {
+      "n_estimators": 300,
+      "max_depth": 8,
+      "min_samples_leaf": 10,
+      "random_state": 42,
+      "n_jobs": -1
+    },
+    "validation_metrics": {
+      "model": "random_forest",
+      "is_baseline": false,
+      "estimator": "RandomForestClassifier",
+      "params": "{\"max_depth\": 8, \"min_samples_leaf\": 10, \"n_estimators\": 300, \"n_jobs\": -1, \"random_state\": 42}",
+      "fit_seconds": 0.3714,
+      "average_precision": 0.6641660575416509,
+      "precision": 0.6534296028880866,
+      "recall": 0.4839572192513369,
+      "f1": 0.5560675883256528,
+      "accuracy": 0.794889992902768,
+      "tn": 939,
+      "fp": 96,
+      "fn": 193,
+      "tp": 181
+    }
+  },
+  "selection": {
+    "metric": "average_precision",
+    "tie_tolerance": 0.005,
+    "rule": "Highest validation average precision among learned models; if another model is within tie_tolerance of the best, keep the one listed first (simpler)."
+  },
+  "config": {
+    "path": "configs/train.json",
+    "sha256": "8ae2ff2fdbb56a5becc052b277d5ceb71eda9d290db80e422dd114d994f928c1"
+  },
+  "code": {
+    "commit": "afbbf8369a5d00a09d858de7a9dedbd0e54225e9",
+    "dirty_working_tree": true
+  },
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26300-SP0",
+    "packages": {
+      "churnlab": "0.2.0",
+      "scikit-learn": "1.9.1",
+      "pandas": "3.0.6",
+      "numpy": "2.4.6",
+      "joblib": "1.6.0"
+    }
+  },
+  "reference_predictions": {
+    "examples_file": "data/examples/new_customers.csv",
+    "customer_ids": [
+      "EX-0001",
+      "EX-0002",
+      "EX-0003",
+      "EX-0004",
+      "EX-0005"
+    ],
+    "positive_scores": [
+      0.79021853022258,
+      0.004508694653802906,
+      0.1266552235190284,
+      0.6712411723525221,
+      0.08934265503457635
+    ]
+  }
+}

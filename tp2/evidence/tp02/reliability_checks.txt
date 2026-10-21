@@ -1,0 +1,10 @@
+tests/test_package.py::test_version PASSED                               [ 11%]
+tests/test_reliability.py::test_customer_ids_do_not_overlap PASSED       [ 22%]
+tests/test_reliability.py::test_split_is_reproducible PASSED             [ 33%]
+tests/test_reliability.py::test_imputer_medians_come_from_training_only PASSED [ 44%]
+tests/test_reliability.py::test_prediction_does_not_refit PASSED         [ 55%]
+tests/test_reliability.py::test_missing_numeric_and_unknown_category_follow_policy PASSED [ 66%]
+tests/test_reliability.py::test_malformed_numeric_text_fails PASSED      [ 77%]
+tests/test_reliability.py::test_missing_required_feature_fails_visibly PASSED [ 88%]
+tests/test_reliability.py::test_reload_in_fresh_process_preserves_predictions PASSED [100%]
+============================== 9 passed in 2.91s ==============================

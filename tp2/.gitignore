@@ -1,0 +1,29 @@
+# Environments
+.venv/
+.venv-backup/
+.venv-backup-*/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Data and generated outputs
+data/raw/*.csv
+data/processed/*
+!data/processed/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+reports/*
+!reports/.gitkeep
+mlruns/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Local copies not part of the project
+datasets.csv
+TP01_*.md
