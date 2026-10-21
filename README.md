@@ -59,6 +59,17 @@ and no record of when a customer churned. It is **not** an event-time log (dated
 It therefore supports predicting churn from current customer attributes, but not time-based
 validation or causal statements about the effect of a retention action.
 
+## What the lock file does not reproduce
+
+`uv.lock` pins the resolved package versions, but it does not guarantee identical results on every machine:
+
+- **Interpreter and platform:** the lock was resolved with CPython 3.11.9 on Windows; another OS, CPU architecture or Python patch version can install different wheels.
+- **Tools:** the uv version (0.13.4 here) is not pinned by the lock.
+- **System level:** OS libraries, BLAS/threading backends, drivers and hardware are outside its scope.
+- **Data:** the raw CSV is not committed; it is identified only by its URL and SHA-256.
+- **Uncommitted work:** local edits are not identified by any commit.
+- **Training runs:** no model, configuration or random seed is recorded yet (later TPs).
+
 ## Project layout
 
 | Path | Purpose |
