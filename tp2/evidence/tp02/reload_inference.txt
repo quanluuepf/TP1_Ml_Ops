@@ -4,4 +4,4 @@ customerID  churn_score predicted_churn
    EX-0003     0.126655              No
    EX-0004     0.671241             Yes
    EX-0005     0.089343              No
-Max |loaded - original| score difference: 1.110e-16 (tolerance 1e-09) -> AGREE
+Max |loaded - original| score difference: 5.551e-17 (tolerance 1e-09) -> AGREE

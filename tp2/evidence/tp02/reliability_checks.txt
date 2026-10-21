@@ -7,4 +7,4 @@ tests/test_reliability.py::test_missing_numeric_and_unknown_category_follow_poli
 tests/test_reliability.py::test_malformed_numeric_text_fails PASSED      [ 77%]
 tests/test_reliability.py::test_missing_required_feature_fails_visibly PASSED [ 88%]
 tests/test_reliability.py::test_reload_in_fresh_process_preserves_predictions PASSED [100%]
-============================== 9 passed in 2.86s ==============================
+============================== 9 passed in 2.85s ==============================

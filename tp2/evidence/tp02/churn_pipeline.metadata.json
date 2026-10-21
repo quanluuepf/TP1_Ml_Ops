@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-21T17:54:51.881948+00:00",
+  "created_at": "2026-10-21T18:00:35.769501+00:00",
   "artifact": {
     "path": "artifacts/churn_pipeline.joblib",
     "sha256": "32cbd0a8fb5596d7308998bfeccc369154cd26d6caa574788ea37ce548d71b9c",
@@ -74,7 +74,7 @@
       "is_baseline": false,
       "estimator": "RandomForestClassifier",
       "params": "{\"max_depth\": 8, \"min_samples_leaf\": 10, \"n_estimators\": 300, \"n_jobs\": -1, \"random_state\": 42}",
-      "fit_seconds": 0.375,
+      "fit_seconds": 0.3632,
       "average_precision": 0.6641660575416509,
       "precision": 0.6534296028880866,
       "recall": 0.4839572192513369,
@@ -96,7 +96,7 @@
     "sha256": "8ae2ff2fdbb56a5becc052b277d5ceb71eda9d290db80e422dd114d994f928c1"
   },
   "code": {
-    "commit": "de4717b81204b9687e77bd67ab21d0ac2dbd855b",
+    "commit": "a7f8e741526af2e3fd09c1b24d1ae470f38cd90f",
     "dirty_working_tree": false
   },
   "environment": {
@@ -122,9 +122,9 @@
     "positive_scores": [
       0.79021853022258,
       0.004508694653802906,
-      0.12665522351902841,
-      0.6712411723525221,
-      0.08934265503457635
+      0.1266552235190284,
+      0.671241172352522,
+      0.08934265503457633
     ]
   }
 }
